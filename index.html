@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="handlers.js"></script>
+        <script src="index.js" defer></script>
+    </head>
 
-  <body>
-    <div class="calculator-container">
-      <div class="calculator-display">
-        <p class="display-text"></p>
-      </div>
-      <div class="calculator-buttons">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="danger">DEL</button>
-        <button class="danger">AC</button>
+    <body>
+        <div class="calculator-container">
+            <div class="calculator-display">
+                <p class="display-text"></p>
+            </div>
+            <div class="calculator-buttons">
+                <button value="7" data-type="number">7</button>
+                <button value="8" data-type="number">8</button>
+                <button value="9" data-type="number">9</button>
+                <button class="danger" data-type="del">DEL</button>
+                <button class="danger" data-type="clear">AC</button>
 
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="operators">&times;</button>
-        <button class="operators">&#247;</button>
+                <button value="4" data-type="number">4</button>
+                <button value="5" data-type="number">5</button>
+                <button value="6" data-type="number">6</button>
+                <button class="operators" value="*" data-type="operator">
+                    &times;
+                </button>
+                <button class="operators" value="/" data-type="operator">
+                    &#247;
+                </button>
 
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="operators">+</button>
-        <button class="operators">-</button>
+                <button value="1" data-type="number">1</button>
+                <button value="2" data-type="number">2</button>
+                <button value="3" data-type="number">3</button>
+                <button class="operators" value="+" data-type="operator">
+                    +
+                </button>
+                <button class="operators" value="-" data-type="operator">
+                    -
+                </button>
 
-        <button>0</button>
-        <button>&middot;</button>
-        <button>ANS</button>
-        <button class="equal-sign">=</button>
-      </div>
-    </div>
-  </body>
+                <button value="0" data-type="number">0</button>
+                <button data-type="decimal" value=".">&middot;</button>
+                <button data-type="ans">ANS</button>
+                <button class="equal-sign" data-type="calc">=</button>
+            </div>
+        </div>
+    </body>
 </html>
