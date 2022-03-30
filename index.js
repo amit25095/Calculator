@@ -30,7 +30,6 @@ const handleButtonClick = (btn) => {
 };
 
 const useKeyboard = (e) => {
-    console.log(e);
     if (e.key.match(/[0-9.]/)) handleNumber(e.key);
     else if (e.key.match(/[+-/*]/)) handleOperator(e.key);
     else if (e.key === 'Enter') handleEqualSign();
