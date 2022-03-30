@@ -33,6 +33,7 @@ const handleOperator = (op) => {
         }
     };
 
+    isDecimal = false;
     currentNumber = '';
     displayText.textContent = res;
 };
