@@ -29,11 +29,23 @@ const handleButtonClick = (btn) => {
     else if (type === 'del') handleDel();
 };
 
+const useKeyboard = (e) => {
+    console.log(e);
+    if (e.key.match(/[0-9.]/)) handleNumber(e.key);
+    else if (e.key.match(/[+-/*]/)) handleOperator(e.key);
+    else if (e.key === 'Enter') handleEqualSign();
+    else if (e.key === 'Escape') clear();
+    else if (e.key === 'Backspace') handleDel();
+
+};
+
 
 const init = () => {
     displayText.textContent = '0';
     const btns = document.querySelectorAll('.calculator-buttons button');
     btns.forEach(btn => btn.addEventListener('click', (e) => handleButtonClick(e.target)));
+
+    window.onkeydown = useKeyboard;
 };
 
 window.onload = init;
