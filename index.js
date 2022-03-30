@@ -31,6 +31,7 @@ const handleButtonClick = (btn) => {
 
 
 const init = () => {
+    displayText.textContent = '0';
     const btns = document.querySelectorAll('.calculator-buttons button');
     btns.forEach(btn => btn.addEventListener('click', (e) => handleButtonClick(e.target)));
 };

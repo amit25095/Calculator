@@ -1,18 +1,21 @@
 let currentNumber = '';
 let currentOperator;
 let res = 0;
+
+let ans = 0;
 let isDecimal = false;
 
 const clear = () => {
-    currentNumber = '';
     res = 0;
-    displayText.textContent = '';
+    currentNumber = '';
+    ans = 0;
+    displayText.textContent = res;
 };
 
 const handleOperator = (op) => {
     const val = parseFloat(currentNumber);
 
-    if (!res || !currentOperator || !currentNumber) {
+    if (!currentOperator || currentNumber === '') {
         currentOperator = op;
         res = isNaN(val) ? res : val;
     }
@@ -21,6 +24,7 @@ const handleOperator = (op) => {
         try {
             res = operate(currentOperator, res, val);
             currentOperator = op;
+            ans = res;
         }
         catch (e) {
             clear();
@@ -30,7 +34,7 @@ const handleOperator = (op) => {
     };
 
     currentNumber = '';
-    displayText.textContent = res ? res : '';
+    displayText.textContent = res;
 };
 
 const handleNumber = (val) => {
@@ -45,7 +49,7 @@ const handleNumber = (val) => {
 
 const handleAns = () => {
     displayText.textContent = 'ANS';
-    currentNumber = res;
+    currentNumber = ans;
 };
 
 const handleDel = () => {
